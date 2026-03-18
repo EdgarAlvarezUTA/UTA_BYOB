@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "skills": {
+    "aws-advisor": {
+      "name": "aws-advisor",
+      "source": "local",
+      "contentHash": "ae13aed5247978ad0b05d4020aad4fa5b43f33fdee1463bcb417443142cb7b74",
+      "installedAt": "2026-02-20T18:58:27.443Z",
+      "updatedAt": "2026-02-20T18:58:27.443Z",
+      "agents": [
+        "cursor"
+      ],
+      "method": "copy",
+      "global": false
+    }
+  }
+}
