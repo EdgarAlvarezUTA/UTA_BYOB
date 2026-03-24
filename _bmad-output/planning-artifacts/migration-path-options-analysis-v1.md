@@ -25,7 +25,7 @@ The analysis is intended as a decision-support artifact for the workshop between
 
 Use the Cloudinary CLI's `sync` or `clone` command to replicate assets and metadata from the existing Cloudinary environment into the new environment backed by UTA's S3 (BYOB).
 
-- **`cld sync`**: Documented for local-folder ↔ cloud synchronization. Whether it supports cloud-to-cloud (environment-to-environment) is **not confirmed** by public documentation.
+- **`cld sync`**: Documented for local-folder <-> cloud synchronization. Whether it supports cloud-to-cloud (environment-to-environment) is **not confirmed** by public documentation.
 - **`cld clone`**: Appears to perform environment-level duplication. Whether it carries binary assets, metadata, structured fields, and tags into a BYOB-backed target is **not confirmed**.
 - If it works as hoped, this collapses the migration into a single command execution managed by Cloudinary's platform.
 
@@ -117,7 +117,7 @@ The following questions must be resolved before selecting a migration path. Thes
 | # | Question | Relevant Option | Impact if Unresolved |
 |---|---|---|---|
 | 1 | Does `cld clone` copy binary assets, metadata (tags, context, structured fields), and `public_id` exactly as-is into a new environment? | A | Cannot assess Option A feasibility |
-| 2 | Does `cld sync` support cloud-to-cloud (environment-to-environment) operation, or is it limited to local-folder ↔ cloud? | A | If local-only, Option A is eliminated |
+| 2 | Does `cld sync` support cloud-to-cloud (environment-to-environment) operation, or is it limited to local-folder <-> cloud? | A | If local-only, Option A is eliminated |
 | 3 | Does either CLI command consume Admin API quota internally, and what is the request rate behavior at scale? | A | Risk of exhausting 5,000 req/hr during migration |
 | 4 | Will CLI commands operate correctly against a target environment that already has BYOB (S3) configured as the storage backend? | A | CLI + BYOB combination may not be validated by PS |
 | 5 | Can Cloudinary configure a cross-account S3 permission (replication rule or `CopyObject` IAM grant) from Cloudinary's internal bucket to UTA's S3 bucket? | C | Determines whether Option C is viable at all |
